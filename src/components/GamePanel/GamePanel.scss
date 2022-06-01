@@ -1,0 +1,37 @@
+@import "../../Utils/mixin.scss";
+
+.game-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 95%;
+    .score-to-win-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    @include responsive(tablet) {
+        justify-content: space-around;
+    }
+    @include responsive(mini-tablet) {
+        gap: 5rem;
+        width: 90%;
+    }
+}
+
+.game-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.dice-container {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    @include responsive(mini-tablet) {
+        flex-direction: row;
+    }
+}

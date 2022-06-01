@@ -1,0 +1,16 @@
+@import "../../Utils/mixin.scss";
+
+html {
+    font-size: 62.5%;
+}
+
+.winning-msg {
+    font-size: 4rem;
+    color: #fff;
+    @include responsive(tablet) {
+        font-size: 3rem;
+    }
+    @include responsive(mobile) {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,45 @@
+@import "../../Utils/mixin.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.btn-container {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    background: #cfa48b;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    &:active {
+        transition: box-shadow 100ms ease-in-out;
+        transform: scale(0.95);
+        transition: transform 100ms ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 27px,
+            rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    @include responsive(tablet) {
+        padding: 0.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+div[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+    box-shadow: none;
+}

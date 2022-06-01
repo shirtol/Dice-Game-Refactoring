@@ -1,0 +1,84 @@
+@import "../../Utils/mixin.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.player-container {
+    position: relative;
+    height: 70%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border-radius: 10px;
+    @include responsive(mini-tablet) {
+        margin: 1rem;
+        width: 95%;
+        height: max-content;
+    }
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    color: #fff;
+    padding: 2rem;
+    user-select: none;
+
+    @include responsive(small-screen) {
+        padding: 5px;
+        width: 20rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    @include responsive(mini-tablet) {
+        flex-direction: row;
+        width: 100%;
+        height: 5rem;
+        text-align: center;
+        align-content: center;
+
+        .total-score {
+            margin-left: 20px;
+            align-content: center;
+        }
+    }
+    @include responsive(mobile) {
+        font-size: 0.7rem;
+    }
+}
+
+.bg-player-container {
+    position: absolute;
+    background: #925469;
+    opacity: 0.3;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    @include responsive(mini-tablet) {
+        text-align: center !important;
+        width: 100%;
+        height: 5rem;
+    }
+}
+
+.curr-score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include responsive(mini-tablet) {
+        width: 10rem;
+        font-size: 6px;
+        .curr-score-title {
+            margin: 0;
+        }
+    }
+}

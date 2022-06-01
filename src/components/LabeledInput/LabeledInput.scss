@@ -1,0 +1,65 @@
+@import "../../Utils/mixin.scss";
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    input {
+        text-align: center;
+        padding-top: 1rem;
+        width: 20rem;
+        height: 5rem;
+        font-weight: 600;
+        font-size: 2rem;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        background: #cfa48b;
+        // padding: 1rem;
+        border-radius: 1rem;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+            rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border: none;
+        outline: none;
+        @include responsive(tablet) {
+            width: 15rem;
+        }
+    }
+
+    label {
+        position: absolute;
+        pointer-events: none;
+        transform: translate(0, 23px) scale(1);
+        transform-origin: top left;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        color: #b05b62;
+        font-size: 1.4rem;
+        left: 0;
+        top: 0;
+        margin-top: -0.5rem;
+        width: 20rem;
+        height: min-content;
+        text-align: center;
+        @include responsive(tablet) {
+            transform-origin: center top;
+            width: max-content;
+        }
+    }
+
+    .filled {
+        transform: translate(0, 5px) scale(0.8);
+        margin-top: 0;
+    }
+}
+
+.input-container:focus-within label {
+    transform: translate(0, 5px) scale(0.8);
+    color: #804146;
+    margin-top: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
